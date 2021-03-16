@@ -1,0 +1,22 @@
+{
+  "name": "webappify",
+  "version": "1.0.0",
+  "description": "Allows you to use a temporary proxy to create standalone web applications of any website!",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngelDTF/WebAppify.git"
+  },
+  "author": "Angel Bot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AngelDTF/WebAppify/issues"
+  },
+  "homepage": "https://github.com/AngelDTF/WebAppify#readme",
+  "dependencies": {
+    "anyproxy": "^4.1.3"
+  }
+}
