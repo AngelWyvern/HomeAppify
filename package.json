@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AngelDTF/WebAppify.git"
+    "url": "git+https://github.com/AngelWyvern/WebAppify.git"
   },
   "author": "Angel Bot",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AngelDTF/WebAppify/issues"
+    "url": "https://github.com/AngelWyvern/WebAppify/issues"
   },
-  "homepage": "https://github.com/AngelDTF/WebAppify#readme",
+  "homepage": "https://github.com/AngelWyvern/WebAppify#readme",
   "dependencies": {
     "anyproxy": "^4.1.3"
   }
