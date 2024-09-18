@@ -50,7 +50,10 @@ Bun.serve(
 			switch (op)
 			{
 				case 'getManifest':
-					ws.send('getManifestRes::' + JSON.stringify(appManifest));
+					var res:string = 'getManifestRes::' + JSON.stringify(appManifest);
+					if (iconData.length > 0)
+						res += '\0' + iconData[largestIcon].toString('base64');
+					ws.send(res);
 					break;
 				case 'setManifest':
 					appManifest = JSON.parse(args[0]);

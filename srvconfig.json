@@ -25,6 +25,6 @@
 	},
 	"pwa": // App manifest generator
 	{
-		"iconSizes":[ "152x152", "167x167", "180x180" ] // Which sizes should be generated for the app icon [default: "64x64", "128x128", "256x256"]
+		"iconSizes":[ "64x64", "128x128", "256x256" ] // Which sizes should be generated for the app icon [default: "64x64", "128x128", "256x256"]
 	}
 }

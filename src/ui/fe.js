@@ -3,6 +3,7 @@ let overlay;
 let inputs = { };
 let uploader;
 let iconbuf = null;
+let iconbox;
 
 document.addEventListener('DOMContentLoaded', () =>
 {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () =>
 	inputs.background_color = document.querySelector('#input-bg-color');
 	inputs.theme_color = document.querySelector('#input-theme-color');
 	uploader = document.querySelector('#icon-upload');
+	iconbox = document.querySelector('#icon-box');
 
 	ws = new WebSocket('ws://127.0.0.1:6553/');
 
@@ -52,6 +54,11 @@ document.addEventListener('DOMContentLoaded', () =>
 				checkValue(manifest, 'background_color', '#000000');
 				checkValue(manifest, 'theme_color', '#000000');
 				checkValue(manifest, 'orientation', 'any');
+				if (args.length > 1)
+				{
+					iconbox.style.backgroundImage = 'url(data:image/png;base64,' + args[1] + ')';
+					iconbox.setAttribute('has-image', 'true');
+				}
 				break;
 		}
 	});
@@ -71,8 +78,6 @@ document.addEventListener('DOMContentLoaded', () =>
 			setPopupLabel(pre + timeleft + '...');
 		}, 1000);
 	});
-
-	const iconbox = document.querySelector('#icon-box');
 
 	uploader.addEventListener('change', e =>
 	{
