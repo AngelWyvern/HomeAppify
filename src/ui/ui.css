@@ -1,0 +1,43 @@
+@keyframes flash
+{
+	0% { background-color: #FFF2; box-shadow: 28px 0 #FFF2, -28px 0 #FFF; }
+	50% { background-color: #FFF; box-shadow: 28px 0 #FFF2, -28px 0 #FFF2; }
+	100% { background-color: #FFF2; box-shadow: 28px 0 #FFF, -28px 0 #FFF2; }
+}
+
+:root { display: flex; width: 100%; height: 100%; font-size: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { display: flex; flex-grow: 1; background: #222430; color: #fff; margin: 0; overflow: hidden; }
+input[type=text], input[type=color], select { background-color: #0006; background-clip: padding-box; color: currentColor; box-sizing: content-box; width: auto; height: 24px; padding: 8px 16px; border: 3px solid #fff6; border-radius: 16px; font-size: 18px; font-family: inherit; outline: 0; }
+input[type=text]:focus, input[type=color]:focus, select:focus { border-color: #fffc; }
+input[type=file] { display: none; appearance: none; user-select: none; }
+
+.label { text-align: center; user-select: none; }
+.button { background: #0080ffa0; padding: 8px 16px; border-radius: 16px; cursor: pointer; user-select: none; transition: background-color 100ms ease-out; }
+.button:hover { background: #0080ffc0; }
+.button:active { background: #0080ff80; transition: none; }
+.grid { display: grid; gap: 16px 24px; }
+.rows2 { grid-template-rows: 1fr 1fr; }
+.cols2 { grid-template-columns: 1fr 1fr; }
+.input-container { display: flex; flex-direction: column; position: relative; }
+.input-container[label]:before { content: attr(label); padding: 4px 6px; font-size: 18px; opacity: 0.8625; }
+.input-container[required]:before { margin-inline-start: 12px; }
+.input-container[required]:after { content: ''; background: #f00; border-radius: 50%; width: 6px; height: 6px; position: absolute; top: 14px; left: 6px; }
+
+#content { display: flex; flex-direction: column; flex-grow: 1; gap: 64px; padding: 64px; background: #0002; align-items: center; overflow: hidden auto; }
+@media screen and (min-width: 684px) { #content { flex-grow: 0; width: auto; height: 75%; aspect-ratio: 0.575; margin: auto; border-radius: 32px; } }
+#icon-box { background-size: contain; background-position: center; background-repeat: no-repeat; width: 224px; height: 224px; border-radius: 32px; position: relative; cursor: pointer; flex: 0 0 auto; }
+#icon-box:before { content: ''; position: absolute; inset: 0; background: url(assets/uploadcontent.png) center no-repeat; border: 4px dashed #fff6; border-radius: 32px; user-select: none; }
+#icon-box[has-image=true]:before { opacity: 0; transition: opacity 100ms ease-out; }
+#icon-box[has-image=true]:hover:before, #icon-box[has-image=true]:active:before { opacity: 1; }
+#icon-box > .label { position: absolute; bottom: 16px; right: 16px; background: #0006; padding: 3px 8px; border-radius: 12px; z-index: 1; user-select: none; pointer-events: none; }
+#icon-box > .label:before { content: ''; display: inline-block; margin-block: 4.5px; margin-inline-end: 6px; background: #f00; border-radius: 50%; width: 7px; height: 7px; }
+#icon-box > .label:after { content: 'App Icon'; position: relative; top: -2px; }
+#icon-box:after { content: ''; position: absolute; inset: 0; background: #101118; border-radius: 32px; opacity: 0; user-select: none; pointer-events: none; transition: opacity 100ms ease-out; }
+#icon-box:hover:after { opacity: 0.3; }
+#icon-box:active:after { opacity: 0.5; transition: none; }
+
+#overlay { display: flex; position: fixed; inset: 0; background: #000a; justify-content: center; align-items: center; transition: opacity 200ms ease-out; z-index: 1001; }
+#overlay[hide] { opacity: 0; pointer-events: none; user-select: none; }
+.popup-box { display: flex; flex-direction: column; width: 400px; height: 200px; gap: 32px; background: #222430; border-radius: 32px; box-shadow: 0 2px 32px #0008; justify-content: center; align-items: center;  }
+.loader { width: 12px; height: 12px; border-radius: 50%; background-color: #fff; box-shadow: 28px 0 #fff, -28px 0 #fff; position: relative; animation: flash 0.5s ease-out infinite alternate; }

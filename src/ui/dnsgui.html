@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PWA Manifest Configurator</title>
+		<link rel="stylesheet" href="ui.css">
+	</head>
+	<body>
+		<div id="content">
+			<div id="icon-box">
+				<input type="file" id="icon-upload" accept="image/jpeg,image/png,image/webp,image/gif,image/avif,image/tiff">
+				<div class="label"></div>
+			</div>
+			<div class="grid cols2">
+				<div class="input-container" label="App Name" required><input id="input-app-name" type="text"></div>
+				<div class="input-container" label="Short Name"><input id="input-short-name" type="text"></div>
+				<div class="input-container" label="Start URL" required><input id="input-start-url" type="text"></div>
+				<div class="input-container" label="Display" required><select id="input-display">
+					<option value="standalone">Standalone</option>
+					<option value="fullscreen">Fullscreen</option>
+					<option value="minimal-ui">Minimal UI</option>
+				</select></div>
+				<div class="input-container" label="App Colors (BG/Theme)"><div class="grid cols2">
+					<input id="input-bg-color" type="color">
+					<input id="input-theme-color" type="color">
+				</div></div>
+				<div class="input-container" label="Orientation"><select id="input-orientation">
+					<option value="any">Any</option>
+					<option value="portrait">Portrait</option>
+					<option value="landscape">Landscape</option>
+				</select></div>
+			</div>
+			<div id="submit" class="button">Update manifest</div>
+		</div>
+		<div id="overlay">
+			<div class="popup-box">
+				<div class="label">Connecting to back-end...</div>
+				<div class="loader"></div>
+			</div>
+		</div>
+		<script src="fe.js"></script>
+	</body>
+</html>

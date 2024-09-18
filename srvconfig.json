@@ -1,0 +1,30 @@
+{
+	// WARNING: ONLY CHANGE THESE SETTINGS IF YOU ABSOLUTELY KNOW WHAT YOU'RE DOING
+	// THE APP MAY STOP WORKING IF THESE PARAMETERS ARE MODIFIED!
+
+	"ws": // WebSocket front-end UI communication layer
+	{
+		"host":"0.0.0.0", // Hostname to use for the WebSocket communication server [default: "0.0.0.0"]
+		"port":6553 // Port number to use for the WebSocket communication server [default: 6553]
+	},
+	"http": // HTTP server
+	{
+		"host":"0.0.0.0", // Hostname to use for the HTTP server [default: "0.0.0.0"]
+		"port":80 // Port number to use for the HTTP server [default: 80]
+	},
+	"https": // HTTPS server
+	{
+		"host":"0.0.0.0", // Hostname to use for the HTTPS server [default: "0.0.0.0"]
+		"port":443 // Port number to use for the HTTPS server [default: 443]
+	},
+	"dns": // DNS rerouter server
+	{
+		"host":"0.0.0.0", // Hostname to use for the DNS rerouter server [default: "0.0.0.0"]
+		"port":53, // Port number to use for the DNS rerouter server [default: 53]
+		"reroute":"192.168.1.24" // Hostname of the machine running HomeAppify [your IPv4 can be found by running 'ipconfig /all' (Windows) or 'ifconfig' (Linux)]
+	},
+	"pwa": // App manifest generator
+	{
+		"iconSizes":[ "152x152", "167x167", "180x180" ] // Which sizes should be generated for the app icon [default: "64x64", "128x128", "256x256"]
+	}
+}
